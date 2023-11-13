@@ -33,6 +33,6 @@ describe('Pruebas sobre el componente FirstApp', () => {
             />
         );
 
-        expect(getByText( subTitle )).toBeTruthy();
+        expect(getByText(subTitle)).toBeTruthy();
     })
 });

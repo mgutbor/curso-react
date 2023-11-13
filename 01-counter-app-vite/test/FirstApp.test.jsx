@@ -7,6 +7,17 @@ describe('Pruebas sobre el componente FirstApp', () => {
 
         const title = "Hola, soy una prueba";
         const subtitulo = 123;
-        render( <FirstApp title={title} subTitle={subtitulo}/> )
+        const { container } = render( <FirstApp title={title} subTitle={subtitulo}/> )
+
+        expect(container).toMatchSnapshot(); 
+    });
+
+    test('debe mostrar el titulo en un h1', async() => {
+
+        const title = "Hola, soy una prueba";
+        const subtitulo = 123;
+        const { container, getByText } = render( <FirstApp title={title} subTitle={subtitulo}/> )
+
+        expect(getByText(title)).toBeTruthy();
     })
 });

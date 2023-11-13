@@ -17,7 +17,6 @@ FirstApp.propTypes = {
 }
 
 FirstApp.defaultProps = {
-  title: 'No hay titulo',
   subTitle: 'No hay subtitulo',
   name: 'Manuel'
 }

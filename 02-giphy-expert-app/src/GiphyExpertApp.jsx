@@ -4,7 +4,7 @@ import { GifGrid } from "./components/GifGrid";
 
 export const GiphyExpertApp = () => {
 
-  const [categories, setCategories] = useState( ['Pokemon', 'Dragon ball'] );
+  const [categories, setCategories] = useState( ['Pokemon'] );
 
   const onAddCategory = (newCategory) => {
     if(categories.findIndex( item =>  newCategory.toLowerCase() === item.toLowerCase()) !== -1 ) return;

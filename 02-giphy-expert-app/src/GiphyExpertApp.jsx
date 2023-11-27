@@ -4,7 +4,10 @@ export const GiphyExpertApp = () => {
 
   const [categories, setCategories] = useState( ['Pokemon', 'Dragon ball'] );
 
-  console.log(categories);
+  const handleButtonClick = () => {
+    const newCategory = "Oliver y Benji";
+    setCategories ([...categories, newCategory])
+  }
   return (
     <>
       {/* titulo */}
@@ -13,11 +16,12 @@ export const GiphyExpertApp = () => {
       {/* input */}
 
       {/* listado de GIF */}
+        <button onClick={handleButtonClick}>Agregar</button>
         <ol>
           { categories.map( category => {
               return <li key={ category }>{ category }</li>
             }
-          )};
+          )}
         </ol>
     </>
   )

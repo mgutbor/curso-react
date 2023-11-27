@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 export const GiphyExpertApp = () => {
 
@@ -13,22 +14,18 @@ export const GiphyExpertApp = () => {
 
   return (
     <>
-      {/* titulo */}
       <h1>GiphyExpertApp</h1>
 
-      {/* input */}
-      <AddCategory 
-        // onAddCategory={ setCategories }
-        onNewCategory={ onAddCategory }
-        />
+      <AddCategory onNewCategory={ onAddCategory } />
 
-      {/* listado de GIF */}
-        <ol>
-          { categories.map( category => {
-              return <li key={ category }>{ category }</li>
-            }
-          )}
-        </ol>
+      { 
+        categories.map( (category) => (
+          <GifGrid 
+            key={category} 
+            category={category}
+          />
+        ))
+      }
     </>
   )
 }

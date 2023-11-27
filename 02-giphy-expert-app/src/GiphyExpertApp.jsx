@@ -1,5 +1,10 @@
+import { useState } from "react";
 
 export const GiphyExpertApp = () => {
+
+  const [categories, setCategories] = useState( ['Pokemon', 'Dragon ball'] );
+
+  console.log(categories);
   return (
     <>
       {/* titulo */}
@@ -8,7 +13,12 @@ export const GiphyExpertApp = () => {
       {/* input */}
 
       {/* listado de GIF */}
-        {/* GIFitem */}
+        <ol>
+          { categories.map( category => {
+              return <li key={ category }>{ category }</li>
+            }
+          )};
+        </ol>
     </>
   )
 }

@@ -6,6 +6,8 @@ export const GiphyExpertApp = () => {
   const [categories, setCategories] = useState( ['Pokemon', 'Dragon ball'] );
 
   const onAddCategory = (newCategory) => {
+    if(categories.findIndex( item =>  newCategory.toLowerCase() === item.toLowerCase()) !== -1 ) return;
+    // if (categories.includes(newCategory)) return;
     setCategories([newCategory, ...categories]);
   }
 

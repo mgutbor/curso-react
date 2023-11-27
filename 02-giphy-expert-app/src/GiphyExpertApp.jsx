@@ -5,13 +5,20 @@ export const GiphyExpertApp = () => {
 
   const [categories, setCategories] = useState( ['Pokemon', 'Dragon ball'] );
 
+  const onAddCategory = (newCategory) => {
+    setCategories([newCategory, ...categories]);
+  }
+
   return (
     <>
       {/* titulo */}
       <h1>GiphyExpertApp</h1>
 
       {/* input */}
-      <AddCategory onAddCategory={ setCategories } />
+      <AddCategory 
+        // onAddCategory={ setCategories }
+        onNewCategory={ onAddCategory }
+        />
 
       {/* listado de GIF */}
         <ol>

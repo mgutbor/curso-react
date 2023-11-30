@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+import { AddCategory, GifGrid } from "./components";
 
 export const GiphyExpertApp = () => {
 
@@ -8,7 +7,6 @@ export const GiphyExpertApp = () => {
 
   const onAddCategory = (newCategory) => {
     if(categories.findIndex( item =>  newCategory.toLowerCase() === item.toLowerCase()) !== -1 ) return;
-    // if (categories.includes(newCategory)) return;
     setCategories([newCategory, ...categories]);
   }
 

@@ -10,6 +10,5 @@ export const getGif = async(category) => {
     url: img.images.downsized_medium.url
   }));
   
-  console.log(gift);
   return gift;
 }

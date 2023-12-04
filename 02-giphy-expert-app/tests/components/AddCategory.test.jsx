@@ -14,7 +14,23 @@ describe('Pruebas en componente AddCategory', () => {
     expect(input.value).toBe('Manolo');
     // screen.debug();
     
+  });
+
+  test('debe de llamar a onNewCategory si el input tiene un valor', () => {
     
+    const inputValue = 'Manolo'
+
+    render( <AddCategory onNewCategory={ () => {}} /> );
+
+    const input = screen.getByRole('textbox');
+    const form = screen.getByRole('form');
+    
+    fireEvent.input( input, { target: { value: inputValue }} );
+    fireEvent.submit( form );
+
+    // screen.debug();
+
+    expect(input.value).toBe('');
   });
 
 });
